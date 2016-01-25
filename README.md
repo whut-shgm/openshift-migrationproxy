@@ -19,7 +19,7 @@ oc new-project openshift-migrationproxy \
 
 Clone the repository
 ```sh
-git clone git@github.com:ure/openshift-migrationproxy.git
+git clone https://github.com/ure/openshift-migrationproxy.git
 cd openshift-migrationproxy
 ```
 
