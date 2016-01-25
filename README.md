@@ -23,10 +23,11 @@ git clone git@github.com:ure/openshift-migrationproxy.git
 cd openshift-migrationproxy
 ```
 
-Create the BuildConfig
+Create the BuildConfig and DeploymentConfig
 
 ```sh
 oc create -f BuildConfig.yaml
+oc create -f DeploymentConfig.yaml
 ```
 
 Deploy
