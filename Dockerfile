@@ -1,11 +1,7 @@
 FROM centos:7
 MAINTAINER Joeri van Dooren
 
-RUN echo "[nginx] \
-name=nginx repo\
-baseurl=http://nginx.org/packages/mainline/OS/OSRELEASE/$basearch/ \
-gpgcheck=0 \
-enabled=1" >/etc/yum.repos.d/nginx.repo
+ADD nginx.repo /etc/yum.repos.d/nginx.repo
 
 RUN yum -y install nginx && yum clean all -y
 
