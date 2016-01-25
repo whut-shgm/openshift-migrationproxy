@@ -1,8 +1,6 @@
 FROM centos:7
 MAINTAINER Joeri van Dooren
 
-RUN dig weepee.org
-
 RUN yum -y install epel-release && yum -y install nginx && yum --enablerepo=epel -y install ssmtp && yum clean all -y
 
 ADD nginx.conf /
