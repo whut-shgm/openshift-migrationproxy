@@ -4,11 +4,8 @@ MAINTAINER Joeri van Dooren
 RUN echo "[nginx]\n\
 name=nginx repo\n\
 baseurl=http://nginx.org/packages/mainline/OS/OSRELEASE/$basearch/\n\
-gpgcheck=0"
-enabled=1 \n\
-KERNEL=="mali", MODE="0660", GROUP="video" \n\
-KERNEL=="ump", MODE="0660", GROUP="video" \n\
-" >/etc/yum.repos.d/nginx.repo
+gpgcheck=0 \n\
+enabled=1" >/etc/yum.repos.d/nginx.repo
 
 RUN yum -y install nginx && yum clean all -y
 
