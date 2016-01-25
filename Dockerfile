@@ -1,7 +1,16 @@
 FROM centos:7
 MAINTAINER Joeri van Dooren
 
-RUN yum -y install epel-release && yum -y install nginx && yum clean all -y
+RUN echo "[nginx]\n\
+name=nginx repo\n\
+baseurl=http://nginx.org/packages/mainline/OS/OSRELEASE/$basearch/\n\
+gpgcheck=0"
+enabled=1 \n\
+KERNEL=="mali", MODE="0660", GROUP="video" \n\
+KERNEL=="ump", MODE="0660", GROUP="video" \n\
+" >/etc/yum.repos.d/nginx.repo
+
+RUN yum -y install nginx && yum clean all -y
 
 ADD nginx.conf /
 
