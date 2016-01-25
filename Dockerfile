@@ -3,7 +3,7 @@ MAINTAINER Joeri van Dooren
 
 RUN curl weepeetelecom.eu
 
-RUN yum -y install epel-release && yum -y install nginx && yum --enablerepo=epel -y install ssmtp && yum clean all -y
+RUN yum -y install epel-release && yum -y install nginx && yum clean all -y
 
 ADD nginx.conf /
 
