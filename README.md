@@ -41,5 +41,5 @@ oc new-app https://github.com/ure/openshift-migrationproxy.git
 Create routes for sites to be proxied
 
 ```sh
-oc create -f route.yaml
+oc create -f Route.yaml
 ```

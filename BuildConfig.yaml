@@ -19,8 +19,6 @@ items:
       git:
         ref: master
         uri: git@github.com:ure/openshift-migrationproxy.git
-      sourceSecret:
-        name: openshift-migrationproxy
       type: Git
     strategy:
       dockerStrategy:
