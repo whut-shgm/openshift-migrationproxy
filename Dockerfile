@@ -1,8 +1,6 @@
 FROM centos:7
 MAINTAINER Joeri van Dooren
 
-RUN curl weepeetelecom.eu
-
 RUN yum -y install epel-release && yum -y install nginx && yum clean all -y
 
 ADD nginx.conf /
