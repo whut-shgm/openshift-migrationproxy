@@ -28,16 +28,6 @@ items:
           kind: ImageStreamTag
           name: centos:7
       type: Docker
-    triggers:
-    - github:
-        secret: GENWEBHOOKSECRET
-      type: GitHub
-    - generic:
-        secret: GENWEBHOOKSECRET
-      type: Generic
-    - type: ConfigChange
-    - imageChange: {}
-      type: ImageChange
   status:
     lastVersion: 0
 kind: List

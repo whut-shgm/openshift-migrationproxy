@@ -1,6 +1,9 @@
 # openshift-migrationproxy
 
-Template for running a nginx container for a static website.
+Template for running a nginx proxy for soon to be migrated instances.
+Sites will be proxied to http://old.$host and https://old.$host, just
+need to add old.blabla.com to DNS and things will hapen automagicaly.
+This is compatible with openshift-letsencrypt.
 
 ### Installation
 
@@ -10,20 +13,8 @@ create a new project
 
 ```sh
 oc new-project openshift-migrationproxy \
-    --description="Website - static nginx" \
-    --display-name="Website static"
-```
-
-#### github private deploy key
-
-create an ssh deploy key without passphrase
-```sh
-ssh-keygen -f ~/.ssh/openshift-migrationproxy
-```
-
-```sh
-oc secrets new-sshauth openshift-migrationproxy --ssh-privatekey=/home/joeri/.ssh/openshift-migrationproxy
-oc secrets add serviceaccount/builder secrets/openshift-migrationproxy
+    --description="Proxy - nginx" \
+    --display-name="Nginx migration proxy"
 ```
 
 Clone the repository
@@ -35,29 +26,19 @@ cd openshift-migrationproxy
 Create the BuildConfig
 
 ```sh
-./genwebhooksecret.sh
 oc create -f BuildConfig.yaml
 ```
-Add your key to the deploy keys of you repository on GitHub
+
+Deploy
 
 ```sh
-cat ~/.ssh/openshift-migrationproxy.pub
+oc new-app https://github.com/ure/openshift-migrationproxy.git
 ```
 
-Deploy from private git repository
+#### Route.yml
 
-```sh
-oc new-app .
-```
-
-#### route.yml
-
-Routes to a static hostname
+Create routes for sites to be proxied
 
 ```sh
 oc create -f route.yaml
 ```
-#### WebHooks
-
-You can find the (github and generic) webhook in the openshift control pannel ! (Browse - Builds)
-You can copy the url to clipboard and paste it in Github webhook url (handy for rolling updates)
