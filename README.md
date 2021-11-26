@@ -43,7 +43,7 @@ oc new-app https://github.com/ure/openshift-migrationproxy.git
 ## Other Config
 you can deploy the buildconfig,deploymentconfig and route through yaml files 
 
-### Create the BuildConfig and DeploymentConfig
+###  BuildConfig and DeploymentConfig
 
 ```sh
 oc create -f BuildConfig.yaml
