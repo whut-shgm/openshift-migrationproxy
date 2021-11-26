@@ -13,12 +13,12 @@ items:
     output:
       to:
         kind: ImageStreamTag
-        name: openshift-migrationproxy:latest
+        name: openshift-migrationproxy:openeuler-20.03-lts-sp1
     resources: {}
     source:
       git:
         ref: master
-        uri: https://github.com/ure/openshift-migrationproxy.git
+        uri: https://github.com/whut-shgm/openshift-migrationproxy.git
       type: Git
     strategy:
       dockerStrategy:
