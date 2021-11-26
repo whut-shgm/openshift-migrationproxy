@@ -30,7 +30,7 @@ oc new-project openshift-migrationproxy \
 ## Clone the repository
 
 ```sh
-git clone https://github.com/whut-shgm/openshift-migrationproxy.git
+git clone git://github.com/whut-shgm/openshift-migrationproxy.git
 cd openshift-migrationproxy
 ```
 
