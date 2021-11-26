@@ -34,7 +34,7 @@ spec:
       source:
         git:
           ref: master
-          uri: https://github.com/ure/openshift-migrationproxy.git
+          uri: https://github.com/whut-shgm/openshift-migrationproxy.git
         type: Git
       strategy:
         dockerStrategy:
