@@ -29,7 +29,7 @@ spec:
       output:
         to:
           kind: ImageStreamTag
-          name: openshift-migrationproxy:latest
+          name: openshift-migrationproxy:openeuler:20.03-lts-sp1
       resources: {}
       source:
         git:
